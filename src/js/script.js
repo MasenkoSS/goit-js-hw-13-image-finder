@@ -27,7 +27,7 @@ function onSearch(e) {
   e.preventDefault();
 
   clearGalleryContainer();
-  imageApiService.query = e.currentTarget.elements.query.value;
+  imageApiService.query = e.currentTarget.elements.query.value.trim();
 
   if (imageApiService.query === '') {
     loadMoreBtn.disable();
@@ -69,14 +69,14 @@ function clearGalleryContainer() {
 function noResults() {
   error({
     text: 'Будь ласка, введіть щось!',
-    delay: 2000,
+    delay: 1000,
   });
 }
 
 function noMatchesFound() {
   error({
     text: 'Співпадінь не знайдено. Будь ласка, введіть інший запит!',
-    delay: 2500,
+    delay: 1000,
   });
 }
 
